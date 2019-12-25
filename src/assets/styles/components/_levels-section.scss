@@ -1,0 +1,35 @@
+@mixin carouselPage {
+  display: inline-grid;
+  vertical-align: top;
+  grid-template-columns: minmax(0, 1fr);
+
+  .illustration {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.levels-section {
+  ul {
+    width: 100%;
+    overflow: hidden;
+    list-style-type: none;
+    white-space: nowrap;
+    padding: 0;
+
+    * {
+      white-space: normal;
+    }
+  }
+
+  .carousel-page {
+    width: 100%;
+    @include carouselPage();
+  }
+
+  @include respond-to('small') {
+    .carousel-page {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}

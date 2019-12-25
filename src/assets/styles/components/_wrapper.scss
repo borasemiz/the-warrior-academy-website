@@ -1,0 +1,39 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.wrapper {
+  padding: 0 1rem;
+  width: 100%;
+}
+
+@include respond-to('small') {
+  .wrapper {
+    padding: 0;
+    margin: 0 auto;
+    width: 540px;
+  }
+}
+
+@include respond-to('medium') {
+  .wrapper {
+    width: 720px;
+  }
+}
+
+@include respond-to('large') {
+  .wrapper {
+    width: 1040px;
+  }
+}
+
+@include respond-to('xlarge') {
+  .wrapper {
+    width: 1360px;
+  }
+}
+
+@include respond-to('xxlarge') {
+  .wrapper {
+    width: 1600px;
+  }
+}

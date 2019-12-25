@@ -1,0 +1,40 @@
+@mixin headerColors {
+  --c-header-border-bottom: var(--c-first-dark);
+  --c-header-background: var(--c-second);
+}
+
+@mixin navigationColors {
+  --c-navigation-text: var(--c-first-dark);
+  --c-navigation-text-highlight: var(--c-second-accent);
+  --c-navigation-hamburger: var(--c-second-accent);
+}
+
+@mixin introductionSectionColors {
+  --c-introduction-header-text: var(--c-second-accent);
+  --c-introduction-content-text: var(--c-first-darker);
+}
+
+@mixin codePreviewColors {
+  --c-code-preview-frame: var(--c-second-accent);
+  --c-code-preview-header: var(--c-second);
+  --c-code-preview-background: #191919;
+}
+
+.theme-dark {
+  background-color: var(--c-second-light);
+  // Primitive color pallet
+  --c-first: #ffffff;
+  --c-first-dark: #fdffc9;
+  --c-first-darker: #dcdcdc;
+  --c-second: #031c12;
+  --c-second-light: #0a2218;
+  --c-second-accent: #ffcd05;
+
+  --c-text: var(--c-first);
+
+  @include headerColors();
+  @include navigationColors();
+  @include introductionSectionColors();
+  @include codePreviewColors();
+  
+}

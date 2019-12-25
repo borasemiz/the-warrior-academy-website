@@ -1,0 +1,49 @@
+@import '../abstract/variables.scss';
+@import '../abstract/mixins.scss';
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $fontUbuntu;
+
+  .logo {
+    width: 10rem;
+    color: white;
+
+    .twa-box {
+      fill: transparent;
+      stroke: currentColor;
+    }
+
+    .logo-text {
+      fill: currentColor;
+    }
+  }
+
+  .right {
+    display: none;
+  }
+}
+
+.navigation-link {
+  color: var(--c-navigation-text);
+  margin: 0 1rem;
+
+  &.active {
+    color: var(--c-navigation-text-highlight);
+    font-weight: bold;
+  }
+}
+
+@include respond-to('small') {
+  .navigation {
+    .logo {
+      width: 15rem;
+    }
+
+    .right {
+      display: block;
+    }
+  }
+}
