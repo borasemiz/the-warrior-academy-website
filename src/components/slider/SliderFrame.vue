@@ -27,12 +27,17 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .slider-frame {
   visibility: visible;
+  overflow: hidden;
+  width: auto;
+  height: auto;
   opacity: 1.0;
   transition: visibility 0ms, opacity 400ms;
 }
 .inactive {
   visibility: hidden;
+  width: 0;
+  height: 0;
   opacity: 0.0;
-  transition: opacity 400ms, visibility 0ms 400ms;
+  transition: opacity 400ms, visibility 0ms 400ms, height 0ms 400ms, width 0ms 400ms;
 }
 </style>

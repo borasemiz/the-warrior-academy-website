@@ -20,6 +20,11 @@
   --c-code-preview-background: #191919;
 }
 
+@mixin sliderColors {
+  --c-slider-bullet-border: var(--c-second-dark);
+  --c-slider-bullet-inner: var(--c-second-accent);
+}
+
 .theme-dark {
   background-color: var(--c-second-light);
   // Primitive color pallet
@@ -28,6 +33,7 @@
   --c-first-darker: #dcdcdc;
   --c-second: #031c12;
   --c-second-light: #0a2218;
+  --c-second-dark: #000000;
   --c-second-accent: #ffcd05;
 
   --c-text: var(--c-first);
@@ -36,5 +42,6 @@
   @include navigationColors();
   @include introductionSectionColors();
   @include codePreviewColors();
+  @include sliderColors();
   
 }

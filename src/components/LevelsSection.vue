@@ -1,16 +1,5 @@
 <template>
   <section class="levels-section">
-    <Slider>
-      <SliderFrame>
-        <p>Slider frame 1</p>
-      </SliderFrame>
-      <SliderFrame>
-        <p>Slider frame 2</p>
-      </SliderFrame>
-      <SliderFrame>
-        <p>Slider frame 3</p>
-      </SliderFrame>
-    </Slider>
   </section>
 </template>
 
@@ -30,6 +19,6 @@ export default class extends Vue {}
 
 <style lang="scss" scoped>
 .levels-section {
-
+  padding: 20px 0;
 }
 </style>

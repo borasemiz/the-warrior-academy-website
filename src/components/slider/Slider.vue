@@ -2,11 +2,12 @@
 import { CreateElement } from 'vue';
 import { Component, Vue } from 'vue-property-decorator';
 
+import SliderBullet from './SliderBullet.vue';
 import SliderFrame from './SliderFrame.vue';
 
 @Component({
   render: function(createElement: CreateElement) {
-    const slideFrames = this.$slots.default ? this.$slots.default : [];
+    const slideFrames: any[] = this.$slots.default ? this.$slots.default : [];
     return createElement('div', {
       class: {
         slider: true
@@ -17,39 +18,41 @@ import SliderFrame from './SliderFrame.vue';
         slideFrames.map(frame => createElement('li', [ frame ]))
       ),
       createElement(
-        'button',
+        'div',
         {
-          on: {
-            click: (this as any).nextSlide
+          class: {
+            'slider-bullets': true
           }
         },
-        [ 'Next' ]
+        [
+          slideFrames.map(
+            (_, index) => createElement(
+              SliderBullet,
+              {
+                nativeOn: {
+                  click: (<any>this).goToSlide(index)
+                },
+                class: {
+                  'bullet': true
+                },
+                props: {
+                  isActive: (<any>this).currentSlideIndex === index
+                }
+              }
+            )
+          )
+        ]
       ),
-      createElement(
-        'button',
-        {
-          on: {
-            click: (this as any).previousSlide
-          }
-        },
-        [ 'Previous' ]
-      )
     ]);
   },
   methods: {
-    nextSlide: function() {
-      const self = this as any;
-      if (self.currentSlideIndex < self.slides.length - 1) {
+    goToSlide(slideIndex: number): () => void {
+      return () => {
+        const self = this as any;
         self.slides[self.currentSlideIndex].deactive();
-        self.slides[++self.currentSlideIndex].activate();
-      }
-    },
-    previousSlide: function() {
-      const self = this as any;
-      if (self.currentSlideIndex > 0) {
-        self.slides[self.currentSlideIndex].deactive();
-        self.slides[--self.currentSlideIndex].activate();
-      }
+        self.slides[slideIndex].activate();
+        self.currentSlideIndex = slideIndex;
+      };
     }
   },
   computed: {
@@ -75,8 +78,6 @@ export default class extends Vue {}
 
 <style lang="scss">
 .slider {
-  background-color: red;
-
   ul {
     list-style-type: none;
     margin: 0;
@@ -85,6 +86,14 @@ export default class extends Vue {}
 
   li {
     display: block;
+  }
+
+  .slider-bullets {
+    text-align: center;
+  }
+
+  .bullet {
+    margin-right: 10px;
   }
 }
 </style>
