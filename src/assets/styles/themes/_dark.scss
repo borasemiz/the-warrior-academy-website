@@ -26,7 +26,6 @@
 }
 
 .theme-dark {
-  background-color: var(--c-second-light);
   // Primitive color pallet
   --c-first: #ffffff;
   --c-first-dark: #fdffc9;
@@ -44,4 +43,6 @@
   @include codePreviewColors();
   @include sliderColors();
   
+  color: var(--c-text);
+  background-color: var(--c-second-light);
 }

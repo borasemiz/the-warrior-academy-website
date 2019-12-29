@@ -1,5 +1,6 @@
 <template>
   <section class="levels-section">
+    <LevelsSlider />
   </section>
 </template>
 
@@ -7,11 +8,11 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 import { Slider, SliderFrame }  from './slider';
+import { LevelsSlider } from './levels-slider';
 
 @Component({
   components: {
-    Slider,
-    SliderFrame
+    LevelsSlider
   }
 })
 export default class extends Vue {}
