@@ -31,6 +31,6 @@ export default class extends Vue {}
 <style lang="scss" scoped>
 .level-expert {
   display: inline-block;
-  width: 160px;
+  width: 300px;
 }
 </style>

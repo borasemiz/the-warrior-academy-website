@@ -12,6 +12,18 @@
     <SliderFrame>
       <ExpertSlide />
     </SliderFrame>
+    <SliderFrame>
+      <AdvancedExpertSlide />
+    </SliderFrame>
+    <SliderFrame>
+      <MasterSlide />
+    </SliderFrame>
+    <SliderFrame>
+      <AdvancedMasterSlide />
+    </SliderFrame>
+    <SliderFrame>
+      <GrandMasterSlide />
+    </SliderFrame>
   </Slider>
 </template>
 
@@ -23,6 +35,10 @@ import NoviceSlide from './NoviceSlide.vue';
 import ApprenticeSlide from './ApprenticeSlide.vue';
 import RegularSlide from './RegularSlide.vue';
 import ExpertSlide from './ExpertSlide.vue';
+import AdvancedExpertSlide from './AdvancedExpertSlide.vue';
+import MasterSlide from './MasterSlide.vue';
+import AdvancedMasterSlide from './AdvancedMasterSlide.vue';
+import GrandMasterSlide from './GrandMasterSlide.vue';
 
 @Component({
   components: {
@@ -31,7 +47,11 @@ import ExpertSlide from './ExpertSlide.vue';
     NoviceSlide,
     ApprenticeSlide,
     RegularSlide,
-    ExpertSlide
+    ExpertSlide,
+    AdvancedExpertSlide,
+    MasterSlide,
+    AdvancedMasterSlide,
+    GrandMasterSlide
   }
 })
 export default class extends Vue {}
