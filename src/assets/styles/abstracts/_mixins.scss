@@ -18,3 +18,16 @@
       + 'Please make sure it is defined `$breakpoints` map.';
   }
 }
+
+@mixin inputBase {
+  background-color: var(--c-input-background);
+  color: var(--c-input-text);
+  border-radius: 0;
+  padding: 10px;
+  border: none;
+}
+
+@mixin inputBordered {
+  border: #{$inputBorderThickness} solid var(--c-input-border);
+  transition: border-color 200ms;
+}

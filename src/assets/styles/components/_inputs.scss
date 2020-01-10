@@ -1,0 +1,18 @@
+@import "../abstracts/mixins";
+
+.label {
+  display: block;
+  width: 100%;
+}
+
+.input-text {
+  @include inputBase();
+}
+
+.input-textarea {
+  @include inputBase();
+  @include inputBordered();
+  display: block;
+  resize: none;
+  width: 100%;
+}

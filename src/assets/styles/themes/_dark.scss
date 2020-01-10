@@ -25,6 +25,13 @@
   --c-slider-bullet-inner: var(--c-second-accent);
 }
 
+@mixin inputColors {
+  --c-input-background: var(--c-second);
+  --c-input-focused-state-border: var(--c-second-accent);
+  --c-input-border: var(--c-second-dark);
+  --c-input-text: var(--c-first-dark);
+}
+
 .theme-dark {
   // Primitive color pallet
   --c-first: #ffffff;
@@ -42,6 +49,7 @@
   @include introductionSectionColors();
   @include codePreviewColors();
   @include sliderColors();
+  @include inputColors();
   
   color: var(--c-text);
   background-color: var(--c-second-light);

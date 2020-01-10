@@ -4,6 +4,7 @@
     <div class="wrapper">
       <IntroductionSection />
       <LevelsSection />
+      <ContactSection />
     </div>
   </div>
 </template>
@@ -11,13 +12,19 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import { Header, IntroductionSection, LevelsSection } from './components';
+import {
+  Header,
+  IntroductionSection,
+  LevelsSection,
+  ContactSection
+} from './components';
 
 @Component({
   components: {
     Header,
     IntroductionSection,
-    LevelsSection
+    LevelsSection,
+    ContactSection
   }
 })
 export default class App extends Vue {}
