@@ -10,7 +10,7 @@
 
       <div class="message-field">
         <label class="label" for="message">Message</label>
-        <textarea class="input-textarea" id="message" name="message" rows="5"></textarea>
+        <TextArea class="message-field" identifier="message" />
       </div>
 
       <div class="form-submit">
@@ -24,10 +24,12 @@
 import { Vue, Component } from 'vue-property-decorator';
 
 import FormField from './FormField.vue';
+import TextArea from './TextArea.vue';
 
 @Component({
   components: {
-    FormField
+    FormField,
+    TextArea
   }
 })
 export default class extends Vue {
@@ -47,6 +49,10 @@ export default class extends Vue {
   display: grid;
   grid-row-gap: 20px;
   row-gap: 20px;
+}
+
+.message-field {
+  width: 100%;
 }
 
 @include respond-to('medium') {

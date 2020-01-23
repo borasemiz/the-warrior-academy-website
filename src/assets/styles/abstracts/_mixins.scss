@@ -28,6 +28,39 @@
 }
 
 @mixin inputBordered {
+  position: relative;
   border: #{$inputBorderThickness} solid var(--c-input-border);
-  transition: border-color 200ms;
+  transition: border-color 300ms;
+
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: linear-gradient(to right, var(--c-input-focused-state-border) 70%, var(--c-input-border));
+    width: 140%;
+    height: #{$inputBorderThickness};
+    background-repeat: no-repeat;
+    transform: translateX(-100%);
+    left: 0;
+    transition: transform 300ms;
+  }
+
+  &:before {
+    top: -#{$inputBorderThickness};
+  }
+
+  &:after {
+    bottom: -#{$inputBorderThickness};
+  }
+}
+
+@mixin inputBorderedFocus {
+  border-left-color: var(--c-input-focused-state-border);
+  border-right-color: var(--c-input-focused-state-border);
+
+  &:after,
+  &:before {
+    transform: translateX(0);
+  }
 }

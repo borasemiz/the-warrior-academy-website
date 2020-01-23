@@ -6,9 +6,11 @@
     <template v-slot:deffinition>
       <h2>Apprentice Frontend Developer</h2>
       <p>
-        We will learn basic CSS. We will focus on the looks of the websites. You will be able to
-        change the colors of texts, backgrounds of everything, add fancy borders... Everything regarding looks.
+        We will continue learning HTML and we are going touch on CSS, so that our content looks beautiful.
+        We will be mostly focusing on the looks of the websites. You will be able to
+        change the colors of texts, backgrounds of everything, add fancy borders... Everything regarding appearance.
       </p>
+      <CodePreview language="css" titleText="shopping.css" :sourceCode="codeSample" />
     </template>
   </LevelSlideBase>
 </template>
@@ -18,14 +20,21 @@ import { Component, Vue } from 'vue-property-decorator';
 
 import LevelSlideBase from './LevelSlideBase.vue';
 import { LevelApprentice } from '../svg-components/level-illustrations';
+import CodePreview from '../CodePreview.vue';
+
+import { escapeHtml } from '@/utils/escape-html';
+import codeSample from '@/constants/apprentice-code-sample';
 
 @Component({
   components: {
     LevelSlideBase,
-    LevelApprentice
+    LevelApprentice,
+    CodePreview
   }
 })
-export default class extends Vue {}
+export default class extends Vue {
+  public codeSample: string = escapeHtml(codeSample);
+}
 </script>
 
 <style lang="scss" scoped>

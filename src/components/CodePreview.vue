@@ -2,7 +2,7 @@
   <section class="code-preview">
     <header>{{ titleText }}</header>
     <div class="preview">
-      <pre><code class="javascript" ref="sourceCode" v-html="sourceCode"></code></pre>
+      <pre><code :class="language" ref="sourceCode" v-html="sourceCode"></code></pre>
     </div>
   </section>
 </template>
@@ -17,11 +17,7 @@ hljs.configure({
   tabReplace: 2
 });
 
-@Component({
-  mounted: function() {
-    hljs.highlightBlock(this.$refs['sourceCode']);
-  }
-})
+@Component
 export default class extends Vue {
   @Prop({
     default: ''
@@ -32,6 +28,15 @@ export default class extends Vue {
     required: true
   })
   public sourceCode: string;
+
+  @Prop({
+    default: 'javascript'
+  })
+  public language: string;
+
+  public mounted(): void {
+    hljs.highlightBlock(this.$refs['sourceCode']);
+  }
 }
 </script>
 

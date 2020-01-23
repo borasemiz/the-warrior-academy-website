@@ -11,8 +11,18 @@
 
 .input-textarea {
   @include inputBase();
-  @include inputBordered();
   display: block;
   resize: none;
   width: 100%;
+}
+
+.input-border {
+  @include inputBordered();
+}
+
+.input-border-focus {
+  &:focus,
+  &.focus {
+    @include inputBorderedFocus();
+  }
 }

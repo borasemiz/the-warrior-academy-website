@@ -16,7 +16,8 @@ import {
   Header,
   IntroductionSection,
   LevelsSection,
-  ContactSection
+  ContactSection,
+  Overview
 } from './components';
 
 @Component({
@@ -24,7 +25,8 @@ import {
     Header,
     IntroductionSection,
     LevelsSection,
-    ContactSection
+    ContactSection,
+    Overview
   }
 })
 export default class App extends Vue {}
