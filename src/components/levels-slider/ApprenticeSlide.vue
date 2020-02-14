@@ -10,7 +10,10 @@
         We will be mostly focusing on the looks of the websites. You will be able to
         change the colors of texts, backgrounds of everything, add fancy borders... Everything regarding appearance.
       </p>
-      <CodePreview language="css" titleText="shopping.css" :sourceCode="codeSample" />
+      <CodePreview>
+        <CodePreviewTab titleText="shopping.css" :sourceCode="cssSample" language="css"/>
+        <CodePreviewTab titleText="shopping.html" :sourceCode="htmlSample" language="html"  />
+      </CodePreview>
     </template>
   </LevelSlideBase>
 </template>
@@ -21,19 +24,22 @@ import { Component, Vue } from 'vue-property-decorator';
 import LevelSlideBase from './LevelSlideBase.vue';
 import { LevelApprentice } from '../svg-components/level-illustrations';
 import CodePreview from '../CodePreview.vue';
+import CodePreviewTab from '../CodePreviewTab.vue';
 
 import { escapeHtml } from '@/utils/escape-html';
-import codeSample from '@/constants/apprentice-code-sample';
+import { css, html } from '@/constants/apprentice-code-sample';
 
 @Component({
   components: {
     LevelSlideBase,
     LevelApprentice,
-    CodePreview
+    CodePreview,
+    CodePreviewTab
   }
 })
 export default class extends Vue {
-  public codeSample: string = escapeHtml(codeSample);
+  public cssSample: string = escapeHtml(css);
+  public htmlSample: string = escapeHtml(html);
 }
 </script>
 

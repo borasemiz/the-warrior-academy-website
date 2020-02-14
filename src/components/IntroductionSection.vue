@@ -5,10 +5,9 @@
       <h1>Welcome to the Warrior Academy</h1>
     </header>
     <div class="content">
-      <CodePreview
-        titleText="welcome.js"
-        :sourceCode="welcomeProgramSource"
-      />
+      <CodePreview>
+        <CodePreviewTab language="js" titleText="welcome.js" :sourceCode="welcomeProgramSource" />
+      </CodePreview>
       <p>
         Hello, my name is <span>Bora</span>. I am a frontend <span>developer</span> and
         <span>instructor</span>. I will teach you frontend and software development.
@@ -22,11 +21,13 @@ import { Component, Vue } from 'vue-property-decorator';
 
 import { WarriorIllustration } from './svg-components';
 import CodePreview from './CodePreview.vue';
+import CodePreviewTab from './CodePreviewTab.vue';
 
 @Component({
   components: {
     WarriorIllustration,
-    CodePreview
+    CodePreview,
+    CodePreviewTab
   }
 })
 export default class extends Vue {

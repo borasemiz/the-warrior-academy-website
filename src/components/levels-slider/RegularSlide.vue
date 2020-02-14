@@ -11,6 +11,10 @@
         continue learning CSS by introducing layouts. You will learn how to align items,
         how to set elements' positions and structuring website's look.
       </p>
+      <CodePreview>
+        <CodePreviewTab titleText="layout.css" language="css" :sourceCode="cssSource" />
+        <CodePreviewTab titleText="fibonacci.js" language="js" :sourceCode="jsSource" />
+      </CodePreview>
     </template>
   </LevelSlideBase>
 </template>
@@ -20,14 +24,23 @@ import { Component, Vue } from 'vue-property-decorator';
 
 import LevelSlideBase from './LevelSlideBase.vue';
 import { LevelRegular } from '../svg-components/level-illustrations';
+import CodePreview from '../CodePreview.vue';
+import CodePreviewTab from '../CodePreviewTab.vue';
+
+import { css, js } from '@/constants/regular-code-sample';
 
 @Component({
   components: {
     LevelSlideBase,
-    LevelRegular
+    LevelRegular,
+    CodePreview,
+    CodePreviewTab
   }
 })
-export default class extends Vue {}
+export default class extends Vue {
+  public cssSource: string = css;
+  public jsSource: string = js;
+}
 </script>
 
 <style lang="scss" scoped>
